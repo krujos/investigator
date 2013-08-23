@@ -23,3 +23,12 @@ get "/ls/:dir" do
   end rescue return 404
   output += "</pre>"
 end
+
+get "/cat/*" do 
+  f = "/" +  params[:splat].first
+  puts "Catting #{f}"
+  output = "<pre>"
+  output += `cat #{f}`
+  output += "</pre>"
+end
+
