@@ -5,11 +5,8 @@ get '/' do
   "Avaliable API's <br/> /env <br/>"
 end
 
-get '/env' do
-  output = '<pre>'
-  output += JSON.pretty_generate(ENV.to_hash)
-  output += '</pre>'
-  output
+get '/env' do  
+  JSON.pretty_generate(ENV.to_hash)
 end
 
 
